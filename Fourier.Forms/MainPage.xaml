@@ -8,15 +8,24 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="clr-namespace:Fourier.Forms.Views;assembly=Fourier.Forms"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
     mc:Ignorable="d"
     x:Class="Fourier.Forms.MainPage">
 
 
     <Grid>
-        <views:FourierView x:Name="FourierView1" />
+        <views:FourierView x:Name="FourierView1">
+            <views:FourierView.UseGLView>
+                <OnPlatform x:TypeArguments="system:Boolean">
+                    <On Platform="iOS" Value="false" />
+                    <On Platform="Android" Value="true" />
+                    <On Platform="macOS" Value="true" />
+                </OnPlatform>
+            </views:FourierView.UseGLView>
+        </views:FourierView>
         <Button Text="Anew"
                 Clicked="Button_OnClicked"
-                VerticalOptions="End" 
+                VerticalOptions="End"
                 HorizontalOptions="Center" />
     </Grid>
 
