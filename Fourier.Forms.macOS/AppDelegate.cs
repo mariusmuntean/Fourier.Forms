@@ -13,7 +13,7 @@ namespace Fourier.Forms.macOS
         public AppDelegate()
         {
             var style = NSWindowStyle.Closable | NSWindowStyle.Resizable | NSWindowStyle.Titled;
-            var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);
+            var rect = new CoreGraphics.CGRect(2000, 2000, 1600, 1600);
 
             _window = new NSWindow(rect, style, NSBackingStore.Buffered, false);
             _window.Title = "Fourier.Forms macOS";
